@@ -1,0 +1,74 @@
+export const servicesData = [
+  {
+    id: 1,
+    slug: 'tower-restaurant',
+    title: 'Tower Restaurant',
+    tagline: 'Sky-high dining with panoramic valley views',
+    image: '/images/gallery4.jpeg',
+    heroImage: '/images/gallery4.jpeg',
+    eyebrow: 'Dining Experience',
+    intro:
+      'Enjoy signature flavors, warm service, and unforgettable scenery from one of the most memorable dining spots at Harness.',
+    description:
+      'The Tower Restaurant brings together elevated dining, local hospitality, and a dramatic natural backdrop. Whether you are stopping in for a relaxed lunch, sunset tea, or a celebratory dinner, the setting turns every meal into an occasion.',
+    longDescription:
+      'Designed for guests who want more than a standard restaurant experience, this space combines open views, comfortable seating, and a menu built around fresh ingredients and crowd-favorite dishes. It is ideal for couples, families, and groups looking to slow down, connect, and enjoy the atmosphere as much as the food.',
+    highlights: ['Scenic dining deck', 'Family-friendly seating', 'Sunset dining', 'Fresh local flavors'],
+    features: [
+      'Indoor and outdoor seating options',
+      'Ideal for breakfast, lunch, and dinner',
+      'Great spot for photos and celebrations',
+      'Comfortable setting for groups and families',
+    ],
+    gallery: ['/images/gallery4.jpeg', '/images/gallery4.jpeg', '/images/gallery4.jpeg'],
+  },
+  {
+    id: 2,
+    slug: 'wedding-destination',
+    title: 'Wedding Destination',
+    tagline: 'Celebrate your big day in a setting made for memories',
+    image: '/images/wed.jpeg',
+    heroImage: '/images/wed.jpeg',
+    eyebrow: 'Celebration Venue',
+    intro:
+      'From intimate ceremonies to lively celebrations, Harness offers a romantic natural backdrop for a truly unforgettable wedding experience.',
+    description:
+      'Our wedding destination service is crafted for couples who want a celebration that feels personal, scenic, and full of atmosphere. The resort setting creates space for ceremonies, receptions, portraits, and guest stays all in one destination.',
+    longDescription:
+      'With dramatic landscapes, cozy accommodations, and a team ready to support your event flow, Harness is a strong choice for destination weddings, engagements, anniversaries, and private celebrations. The venue allows you to blend relaxation, hospitality, and adventure into one seamless experience for you and your guests.',
+    highlights: ['Scenic ceremony backdrop', 'Guest accommodation nearby', 'Photo-friendly spaces', 'Flexible celebration setup'],
+    features: [
+      'Suitable for intimate and mid-size events',
+      'Accommodation support for wedding guests',
+      'Beautiful outdoor photography locations',
+      'A memorable destination atmosphere',
+    ],
+    gallery: ['/images/wed.jpeg', '/images/about4.jpeg', '/images/DSC01961.jpeg'],
+  },
+  {
+    id: 3,
+    slug: 'conference-room',
+    title: 'Conference Room',
+    tagline: 'A focused venue for meetings, retreats, and events',
+    image: '/images/room7.jpg',
+    heroImage: '/images/room7.jpg',
+    eyebrow: 'Business & Events',
+    intro:
+      'Host productive sessions in a peaceful environment that helps teams gather, plan, and reconnect away from the usual routine.',
+    description:
+      'The Conference Room is suited for professional meetings, team retreats, workshops, and private gatherings that need a comfortable and organized setting within the resort.',
+    longDescription:
+      'Harness offers a refreshing alternative to city venues by pairing practical event space with natural surroundings and on-site hospitality. It works especially well for company off-sites, training sessions, planning meetings, and small private events where both concentration and comfort matter.',
+    highlights: ['Peaceful retreat setting', 'Suitable for team sessions', 'On-site hospitality', 'Flexible event use'],
+    features: [
+      'Useful for meetings, workshops, and retreats',
+      'Convenient access to food and accommodation',
+      'Comfortable environment for all-day sessions',
+      'Works for both professional and private events',
+    ],
+    gallery: ['/images/DSC01927.jpeg', '/images/DSC01919.jpeg'],
+  },
+]
+
+export const getServiceBySlug = (slug) =>
+  servicesData.find((service) => service.slug === slug) || servicesData[0]

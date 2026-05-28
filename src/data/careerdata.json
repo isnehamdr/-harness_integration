@@ -1,0 +1,181 @@
+{
+  "meta": {
+    "heroImage": "/images/swing.webp",
+    "heroTitle": "Careers",
+    "heroSubtitle": "Build your adventure with us",
+    "heroDescription": "Join a team that lives and breathes the outdoors. At Harness Adventure Resort, every day brings new challenges, breathtaking views, and the chance to make someone's experience unforgettable.",
+    "sectionBadge": "Join Our Team",
+    "sectionTitle": "Work Where Adventure Happens",
+    "sectionDescription": "We're looking for passionate, energetic people who love the outdoors and thrive in dynamic environments. Whether you're guiding ziplines, hosting events, or managing operations — there's a place for you here."
+  },
+  "perks": [
+    {
+      "id": 1,
+      "icon": "mountain",
+      "title": "Free Activity Access",
+      "description": "All staff enjoy complimentary access to every activity on-site — zipline, rafting, swing, and more."
+    },
+    {
+      "id": 2,
+      "icon": "growth",
+      "title": "Growth & Training",
+      "description": "We invest in your development with paid safety certifications, guide training, and leadership programs."
+    },
+    {
+      "id": 3,
+      "icon": "team",
+      "title": "Close-Knit Team",
+      "description": "Work alongside a passionate crew that feels more like family. Team trips, events, and shared adventures."
+    },
+    {
+      "id": 4,
+      "icon": "schedule",
+      "title": "Flexible Schedules",
+      "description": "We understand life. Seasonal, part-time, and full-time roles available with adaptable shifts."
+    },
+    {
+      "id": 5,
+      "icon": "location",
+      "title": "Stunning Location",
+      "description": "Wake up to the Pokhara valley every single day. Our office view puts most screensavers to shame."
+    },
+    {
+      "id": 6,
+      "icon": "meal",
+      "title": "Staff Meals Included",
+      "description": "Enjoy complimentary meals during shifts prepared fresh on-site. No more sad desk lunches."
+    }
+  ],
+  "positions": [
+    {
+      "id": 1,
+      "slug": "zipline-guide",
+      "title": "Zipline & Adventure Guide",
+      "department": "Operations",
+      "type": "Full-time",
+      "location": "Pokhara, Nepal",
+      "image": "/images/zipline.jpg",
+      "tagline": "Lead the thrill",
+      "summary": "Be the face of adventure at Harness. You'll brief, gear up, and guide guests through our zipline and giant swing experiences while ensuring top-tier safety.",
+      "responsibilities": [
+        "Conduct pre-activity safety briefings for guests",
+        "Inspect and maintain all harness equipment daily",
+        "Operate zipline and giant swing systems",
+        "Assist guests of all experience levels with confidence",
+        "Respond swiftly to any on-site safety incidents",
+        "Maintain accurate activity logs and reports"
+      ],
+      "requirements": [
+        "Strong communication and guest-facing skills",
+        "Physical fitness — comfortable with heights",
+        "Prior guiding or outdoor experience preferred",
+        "Basic first aid certification (or willingness to obtain)",
+        "Fluency in Nepali; conversational English a plus"
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "rafting-guide",
+      "title": "River Rafting Guide",
+      "department": "Operations",
+      "type": "Seasonal",
+      "location": "Seti River, Pokhara",
+      "image": "/images/rafting.jpg",
+      "tagline": "Command the rapids",
+      "summary": "Lead groups through Class III–IV rapids on the Seti River. You'll be responsible for guest safety, paddle instruction, and delivering an unforgettable whitewater experience.",
+      "responsibilities": [
+        "Lead rafting groups on river routes safely and confidently",
+        "Conduct pre-launch paddle training and safety demos",
+        "Manage emergency protocols and swift-water rescues",
+        "Inspect and maintain all rafting equipment",
+        "Coordinate with logistics team for daily schedules",
+        "Create a fun, high-energy atmosphere for every group"
+      ],
+      "requirements": [
+        "Certified river rafting guide (Level 3+ preferred)",
+        "Swift-water rescue certification mandatory",
+        "Minimum 2 seasons of rafting guide experience",
+        "Strong swimming ability and physical endurance",
+        "First aid and CPR certified"
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "guest-experience",
+      "title": "Guest Experience Associate",
+      "department": "Hospitality",
+      "type": "Full-time",
+      "location": "Pokhara, Nepal",
+      "image": "/images/cycling.jpg",
+      "tagline": "Craft every memory",
+      "summary": "You're the first smile guests see. From booking inquiries to on-site welcome, you ensure every interaction with Harness leaves a lasting impression.",
+      "responsibilities": [
+        "Handle guest inquiries via phone, email, and walk-in",
+        "Process activity bookings and coordinate scheduling",
+        "Welcome and orient guests on arrival",
+        "Resolve complaints and feedback professionally",
+        "Coordinate with operations team for smooth handoffs",
+        "Maintain guest records and booking systems"
+      ],
+      "requirements": [
+        "Warm, outgoing personality with strong people skills",
+        "Excellent written and spoken English and Nepali",
+        "Experience in hospitality, tourism, or customer service",
+        "Proficiency with basic computer tools and booking systems",
+        "Ability to multitask in a fast-paced environment"
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "marketing-coordinator",
+      "title": "Marketing & Content Coordinator",
+      "department": "Marketing",
+      "type": "Full-time",
+      "location": "Pokhara, Nepal (Hybrid)",
+      "image": "/images/zipline2.jpg",
+      "tagline": "Tell our story",
+      "summary": "Bring the Harness brand to life across digital platforms. You'll create content, manage our social media presence, and work with the team to attract adventurers from around the world.",
+      "responsibilities": [
+        "Create engaging content for Instagram, Facebook, and TikTok",
+        "Photograph and film activities for social and marketing use",
+        "Manage posting schedules and community engagement",
+        "Assist with campaign planning and seasonal promotions",
+        "Coordinate with design and web teams on assets",
+        "Track analytics and report on content performance"
+      ],
+      "requirements": [
+        "Strong visual storytelling and photography skills",
+        "Experience managing social media for a brand",
+        "Familiarity with video editing tools (CapCut, Premiere, etc.)",
+        "Creative writing ability in English",
+        "Passion for adventure and the outdoors"
+      ]
+    },
+    {
+      "id": 5,
+      "slug": "event-coordinator",
+      "title": "Event & Venue Coordinator",
+      "department": "Events",
+      "type": "Full-time",
+      "location": "Pokhara, Nepal",
+      "image": "/images/swing.webp",
+      "tagline": "Host the unforgettable",
+      "summary": "Manage end-to-end event operations at Harness — from corporate retreats and team outings to private celebrations and destination weddings in our stunning natural setting.",
+      "responsibilities": [
+        "Consult with clients on event requirements and vision",
+        "Plan and coordinate event timelines and logistics",
+        "Liaise with vendors, catering, and decorators",
+        "Supervise on-the-day event execution",
+        "Manage budgets and post-event reporting",
+        "Build relationships with repeat and corporate clients"
+      ],
+      "requirements": [
+        "Experience in event management or hospitality coordination",
+        "Strong organizational and project management skills",
+        "Excellent communication and negotiation ability",
+        "Calm under pressure with strong problem-solving skills",
+        "Flexible availability including weekends and holidays"
+      ]
+    }
+  ]
+}

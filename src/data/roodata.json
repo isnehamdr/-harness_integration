@@ -1,0 +1,157 @@
+{
+  "rooms": [
+    {
+      "id": 1,
+      "slug": "deluxe-double-twin-room",
+      "title": "Deluxe Double & Twin Room",
+      "subtitle": "Deluxe Double & Twin Room",
+      "tagline": "Deluxe Double & Twin Room",
+      "bookingRoomType": "5050235",
+      "description": "Experience unparalleled ocean views and private beach access in this stunning Mediterranean-inspired villa. Featuring floor-to-ceiling windows, infinity pool, and direct beach access.",
+      "longDescription": "Step into a world where the horizon is yours alone. Our Luxury Beachfront Villa places you at the edge of nature's grandest canvas — the sea. Wake to the sound of waves lapping at white sand, dine under open skies, and unwind in a private infinity pool that seems to pour directly into the ocean. Every detail has been curated for the traveler who demands nothing less than extraordinary.",
+      "exploreHref": "/rooms/deluxe-double-twin-room",
+      "images": [
+        { "id": 1, "url": "/images/twin.jpg", "alt": "Ocean View" }
+        
+      ],
+      "price": "$480",
+      "priceUnit": "per night",
+      "capacity": "4 Guests",
+      "size": "320 m²",
+      "beds": "2 King Beds",
+      "icon": "/images/clan-icon-1.svg",
+      "iconAlt": "Deluxe Double & Twin Room Icon",
+      "bgImage": "/images/decorative-bg-1.png",
+      "imageLeft": true,
+      "amenities": [
+        { "icon": "images/icons/view.png", "label": "Ocean Views" },
+        { "icon": "images/icons/bed.png", "label": "Private Beach" },
+        { "icon": "images/icons/pool.png", "label": "Infinity Pool" },
+        { "icon": "images/icons/size.png", "label": "Beachfront Spa" }
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "deluxe-suite",
+      "title": "Deluxe Suite",
+      "subtitle": "Deluxe Suite",
+      "tagline": "Deluxe Suite",
+      "bookingRoomType": "5050237",
+      "description": "Contemporary luxury at its finest with panoramic city views, smart home technology, and an expansive rooftop terrace perfect for entertainment and relaxation.",
+      "longDescription": "The Penthouse redefines altitude. Occupying the entire top floor, this architectural statement piece fuses smart technology with raw material beauty — polished concrete, hand-blown glass, and walls of windows that frame the city like a living painting. The rooftop terrace is your private stage above it all.",
+      "exploreHref": "/rooms/deluxe-suite",
+      "images": [
+        { "id": 1, "url": "/images/deluxesuite2.jpeg", "alt": "Modern Living Room" },
+        { "id": 2, "url": "/images/deluxesuite3.jpeg", "alt": "City View" },
+        { "id": 4, "url": "/images/about4.jpeg", "alt": "Master Suite" }
+      ],
+      "price": "$620",
+      "priceUnit": "per night",
+      "capacity": "6 Guests",
+      "size": "500 m²",
+      "beds": "3 King Beds",
+      "icon": "/images/clan-icon-3.svg",
+      "iconAlt": "Deluxe Suite Icon",
+      "bgImage": "/images/decorative-bg-3.png",
+      "imageLeft": true,
+      "amenities": [
+        { "icon": "images/icons/view.png", "label": "Ocean Views" },
+        { "icon": "images/icons/bed.png", "label": "Private Beach" },
+        { "icon": "images/icons/pool.png", "label": "Infinity Pool" },
+        { "icon": "images/icons/size.png", "label": "Beachfront Spa" }
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "deluxe-family-room",
+      "title": "Deluxe Family Room",
+      "subtitle": "Deluxe Family Room",
+      "tagline": "Deluxe Family Room",
+      "bookingRoomType": "5050238",
+      "description": "Immerse yourself in lush tropical gardens and pristine beaches. This eco-luxury villa features open-air living spaces, private waterfalls, and sustainable design elements.",
+      "longDescription": "In harmony with the earth, our Tropical Paradise villa is a living, breathing ecosystem. Canopied by ancient trees, threaded by stone paths to hidden gardens and your own cascading waterfall, this sanctuary is designed around the radical idea that luxury and sustainability are not opposites — they are one.",
+      "exploreHref": "/rooms/deluxe-family-room",
+      "images": [
+        { "id": 1, "url": "/images/deluxefamil.jpeg", "alt": "Tropical Garden" }
+      ],
+      "price": "$420",
+      "priceUnit": "per night",
+      "capacity": "4 Guests",
+      "size": "280 m²",
+      "beds": "2 King Beds",
+      "icon": "/images/clan-icon-4.svg",
+      "iconAlt": "Deluxe Family Room Icon",
+      "bgImage": "/images/decorative-bg-4.png",
+      "imageLeft": false,
+      "amenities": [
+        { "icon": "images/icons/view.png", "label": "Ocean Views" },
+        { "icon": "images/icons/bed.png", "label": "Private Beach" },
+        { "icon": "images/icons/pool.png", "label": "Infinity Pool" },
+        { "icon": "images/icons/size.png", "label": "Beachfront Spa" }
+      ]
+    },
+    {
+      "id": 5,
+      "slug": "geodesic-igloo-room",
+      "title": "Geodesic Igloo Room",
+      "subtitle": "Geodesic Igloo Room",
+      "tagline": "Geodesic Igloo Room",
+      "bookingRoomType": "5050236",
+      "description": "Step back in time with this meticulously restored colonial estate. Featuring original architectural details, antique furnishings, and modern amenities for the discerning traveler.",
+      "longDescription": "The Heritage Estate is a love letter to another era. Every column, cornice, and courtyard speaks of careful restoration — of hands that understood that beauty ages if you let it. Antique four-poster beds, hand-laid mosaic floors, and verandahs draped in bougainvillea await alongside every modern comfort you expect.",
+      "exploreHref": "/rooms/geodesic-igloo-room",
+      "images": [
+       
+
+          { "id": 1, "url": "/images/bunk1.jpeg", "alt": "Colonial Architecture" },
+        { "id": 2, "url": "/images/bunk2.jpeg", "alt": "Antique Dining Room" },
+        { "id": 3, "url": "/images/bunk3.jpeg", "alt": "Courtyard Garden" }
+      ],
+      "price": "$540",
+      "priceUnit": "per night",
+      "capacity": "8 Guests",
+      "size": "680 m²",
+      "beds": "4 King Beds",
+      "icon": "/images/clan-icon-5.svg",
+      "iconAlt": "Geodesic Igloo Room Icon",
+      "bgImage": "/images/decorative-bg-5.png",
+      "imageLeft": true,
+      "amenities": [
+        { "icon": "images/icons/view.png", "label": "Ocean Views" },
+        { "icon": "images/icons/bed.png", "label": "Private Beach" },
+        { "icon": "images/icons/pool.png", "label": "Infinity Pool" },
+        { "icon": "images/icons/size.png", "label": "Beachfront Spa" }
+      ]
+    },
+    {
+      "id": 6,
+      "slug": "bunk-bed-room",
+      "title": "Bunk Bed Room",
+      "subtitle": "Bunk Bed Room",
+      "tagline": "Bunk Bed Room",
+      "bookingRoomType": "5050248",
+      "description": "Experience luxury in the heart of the desert with this architectural masterpiece. Enjoy starlit skies, infinity pools, and minimalist design that celebrates the natural landscape.",
+      "longDescription": "The Desert Oasis is built for those who find beauty in reduction. Pale stone walls absorb the sun's heat through the day and release it slowly through cool desert nights. The infinity pool reflects a sky uninterrupted by light pollution. Nothing distracts. Everything feels essential. This is luxury as pure presence.",
+      "exploreHref": "/rooms/bunk-bed-room",
+      "images": [
+        { "id": 1, "url": "/images/Bunkbed.jpeg", "alt": "Colonial Architecture" }
+  
+      ],
+      "price": "$390",
+      "priceUnit": "per night",
+      "capacity": "2 Guests",
+      "size": "200 m²",
+      "beds": "1 Emperor Bed",
+      "icon": "/images/clan-icon-6.svg",
+      "iconAlt": "Bunk Bed Room Icon",
+      "bgImage": "/images/decorative-bg-6.png",
+      "imageLeft": false,
+      "amenities": [
+        { "icon": "images/icons/view.png", "label": "Ocean Views" },
+        { "icon": "images/icons/bed.png", "label": "Private Beach" },
+        { "icon": "images/icons/pool.png", "label": "Infinity Pool" },
+        { "icon": "images/icons/size.png", "label": "Beachfront Spa" }
+      ]
+    }
+  ]
+}

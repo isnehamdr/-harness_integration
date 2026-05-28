@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+
+
+a,
+p , span{
+  font-family: "Sofia Sans Extra Condensed", sans-serif;
+
+}
+
+body {
+  overflow-x: hidden;
+  background-color: white !important;
+}
+
+@font-face {
+  font-family: 'vtc';
+  src: url('../public/vtc.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'vtc', sans-serif;
+}
+
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #FAA821 rgba(0, 0, 0, 0.2);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #FAA821;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #e89310;
+}
+
+
+@keyframes moveAlongLine {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+}
+
+.animate-move-along-line {
+  animation: moveAlongLine 6s linear infinite;
+}

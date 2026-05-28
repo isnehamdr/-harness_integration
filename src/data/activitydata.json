@@ -1,0 +1,129 @@
+{
+  "activities": [
+    {
+      "id": 1,
+      "slug": "classic-zipline",
+      "title": "Classic Zipline",
+      "tagline": "Soar Above It All",
+      "intro": "Feel the rush of wind as you glide across breathtaking valleys and lush forests on our signature classic zipline experience.",
+      "description": "Our Classic Zipline is the perfect introduction to the world of aerial adventure. Spanning over 500 meters, this thrilling ride offers panoramic views of the Pokhara valley while delivering an adrenaline rush like no other.",
+      "longDescription": "Designed for all skill levels, our certified guides ensure your complete safety while maximizing the thrill. Whether it's your first time or you're a seasoned adventurer, the Classic Zipline promises an unforgettable experience every single time.",
+      "heroImage": "/images/zipline.jpg",
+      "image": "/images/zipline.jpg",
+      "duration": "15–20 minutes",
+      "difficulty": "Easy",
+      "minAge": 8,
+      "maxWeight": "120 kg",
+      "price": "NPR 1500",
+      "groupSize": "1–6 per session",
+      "features": [
+        "500+ meter span with valley views",
+        "Full safety harness and certified equipment",
+        "Trained guides on-site at all times",
+        "Suitable for ages 8 and above",
+        "Photo and video package available",
+        "All-weather operation (non-monsoon)"
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "river-rafting",
+      "title": "River Rafting",
+      "tagline": "Ride the Rapids",
+      "intro": "Conquer the roaring whitewater rapids of the Seti River — a heart-pounding team adventure you'll never forget.",
+      "description": "Paddle through Class III and IV rapids on one of Nepal's most scenic rivers. Our river rafting experience combines teamwork, strategy, and pure exhilaration as you navigate through crystal-clear waters surrounded by towering gorges.",
+      "longDescription": "Each rafting session is guided by our expert river guides who are trained in swift-water rescue and first aid. We provide all equipment including helmets, life jackets, and paddles. The journey includes calm stretches perfect for swimming and photography alongside intense rapid sections.",
+      "heroImage": "/images/rafting.jpg",
+      "image": "/images/rafting.jpg",
+      "duration": "2–3 hours",
+      "difficulty": "Moderate",
+      "minAge": 14,
+      "maxWeight": "No limit",
+      "price": "NPR 3500",
+      "groupSize": "6–12 per raft",
+      "features": [
+        "Class III–IV rapids on the Seti River",
+        "Professional river guides with rescue training",
+        "Full safety gear: helmet, life jacket, paddle",
+        "Includes swimming breaks and scenic stops",
+        "Pre-rafting safety briefing session",
+        "Dry bags provided for personal items"
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "giant-swing",
+      "title": "Giant Swing",
+      "tagline": "Defy Gravity",
+      "intro": "Experience free-fall like never before on our massive giant swing — the ultimate test of nerve and courage.",
+      "description": "Harness up, take the leap, and swing through the open air with nothing but sky around you. Our Giant Swing launches you from a 30-meter platform into a sweeping arc that delivers a rush of pure freedom and exhilaration.",
+      "longDescription": "The Giant Swing at Harness Adventure Resort is one of the tallest in Nepal. The swing arc gives you a full 180-degree experience from free-fall to soaring pendulum flight. It's the perfect activity for adrenaline junkies looking for their next great thrill.",
+      "heroImage": "/images/swing.webp",
+      "image": "/images/swing.webp",
+      "duration": "10–15 minutes",
+      "difficulty": "Thrilling",
+      "minAge": 12,
+      "maxWeight": "110 kg",
+      "price": "NPR 2000",
+      "groupSize": "1 per session",
+      "features": [
+        "30-meter launch height",
+        "180-degree free-swing arc",
+        "Individual harness system with triple check",
+        "Trained jump masters guide every session",
+        "Video recording available",
+        "Minimum age 12 years"
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "cycling",
+      "title": "Cycling",
+      "tagline": "Explore on Two Wheels",
+      "intro": "Pedal through scenic mountain trails and riverside paths with our guided cycling tours designed for all fitness levels.",
+      "description": "Discover the natural beauty of Pokhara's outskirts on two wheels. Our cycling tours take you through peaceful villages, tea gardens, and forested hillside trails — a perfect blend of adventure and cultural immersion.",
+      "longDescription": "Whether you're a leisurely rider or an enthusiastic mountain biker, we have a route for you. Our fleet of well-maintained bikes includes comfort hybrids and full-suspension mountain bikes. Guided tours include local insights, refreshment stops, and the option to customize your pace.",
+      "heroImage": "/images/cycling.jpg",
+      "image": "/images/cycling.jpg",
+      "duration": "2–4 hours",
+      "difficulty": "Easy to Moderate",
+      "minAge": 10,
+      "maxWeight": "No limit",
+      "price": "NPR 1200",
+      "groupSize": "2–15 per group",
+      "features": [
+        "Multiple trail options for all skill levels",
+        "Well-maintained hybrid and mountain bikes",
+        "Helmet and safety gear included",
+        "Local guide with cultural knowledge",
+        "Refreshment stops at scenic viewpoints",
+        "Customizable duration and pace"
+      ]
+    },
+    {
+      "id": 5,
+      "slug": "superman-zipline",
+      "title": "Superman Zipline",
+      "tagline": "Fly Like a Hero",
+      "intro": "Go horizontal and fly face-down at high speed — the Superman Zipline is the most thrilling zipline experience in Nepal.",
+      "description": "Unlike conventional ziplines, the Superman Zipline straps you in face-down, arms forward, giving you the sensation of actual flight. Spanning over 1 kilometer, you'll reach speeds of up to 80 km/h as you soar over valleys and forests.",
+      "longDescription": "This is the crown jewel of Harness Adventure Resort. The Superman Zipline is designed for those who want to push the limits of aerial adventure. Full body harness, rigorous safety checks, and expert guides ensure that you can focus entirely on the incredible feeling of flying.",
+      "heroImage": "/images/zipline2.jpg",
+      "image": "/images/zipline2.jpg",
+      "duration": "20–30 minutes",
+      "difficulty": "Extreme",
+      "minAge": 16,
+      "maxWeight": "100 kg",
+      "price": "NPR 4000",
+      "groupSize": "1 per session",
+      "features": [
+        "1 km+ span — longest in the region",
+        "Speeds up to 80 km/h face-down flight",
+        "Full-body harness with multiple redundancies",
+        "Pre-flight safety briefing and gear check",
+        "GoPro video package available",
+        "Minimum age 16 years, max weight 100 kg"
+      ]
+    }
+  ]
+}
