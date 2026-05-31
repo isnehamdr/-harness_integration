@@ -18,8 +18,6 @@ const Testimonials = () => {
       fetchTestimonials();
     }, []);
 
-    console.log(testimonials);
-
     const renderStars = (rating) => {
         return [...Array(5)].map((_, index) => (
             <svg
@@ -33,7 +31,6 @@ const Testimonials = () => {
         ))
     }
 
-    // Function to strip HTML tags from long_description
     const stripHtmlTags = (html) => {
         if (!html) return "";
         const tempDiv = document.createElement('div');
@@ -42,40 +39,29 @@ const Testimonials = () => {
     };
 
     return (
-        <div className="relative max-w-7xl mx-auto mt-12 z-10 flex flex-col px-4 sm:px-6 lg:px-8">
-            <div
-                className="w-full flex items-center justify-center p-4 sm:p-8"
-                style={{
-                    backgroundColor: "#FAA821",
-                    maskImage: "url('/images/check.png')",
-                    WebkitMaskImage: "url('/images/check.png')",
-                    maskSize: "cover",
-                    WebkitMaskSize: "cover",
-                    maskPosition: "center",
-                    WebkitMaskPosition: "center",
-                    maskRepeat: "no-repeat",
-                    WebkitMaskRepeat: "no-repeat",
-                }}
-            >
-                <div className="text-center w-full max-w-[1200px] mx-auto py-12 sm:py-16">
-                    <button
-                        className="text-[#FAA821] px-6 sm:px-8 py-2 mb-6 text-sm uppercase tracking-widest font-semibold transition-colors duration-300"
-                        style={{
-                            backgroundColor: "white",
-                            maskImage: "url('/images/logo.png')",
-                            WebkitMaskImage: "url('/images/logo.png')",
-                            maskSize: "contain",
-                            WebkitMaskSize: "cover",
-                            maskPosition: "center",
-                            WebkitMaskPosition: "center",
-                            maskRepeat: "no-repeat",
-                            WebkitMaskRepeat: "no-repeat",
-                        }}
-                    >
-                        <h3>Testimonials</h3>
-                    </button>
+        // Removed z-10 — it was creating a stacking context that bled into siblings during scroll.
+        // isolate creates a self-contained stacking context without affecting neighbours.
+        <div className="relative max-w-7xl mx-auto mt-12 isolate px-4 sm:px-6 lg:px-8">
+            <div className="w-full bg-[#FAA821] rounded-2xl">
+                <div className="text-center w-full max-w-[1200px] mx-auto py-12 sm:py-16 px-4 sm:px-6">
+                    {/* Decorative background — kept inside its own relative/absolute pair,
+                        pointer-events-none so it never intercepts scroll or clicks */}
+                    <div className="relative">
+                        <div
+                            className="absolute inset-0 opacity-10 pointer-events-none rounded-2xl"
+                            style={{
+                                backgroundImage: "url('/images/check.png')",
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                                backgroundRepeat: "no-repeat",
+                            }}
+                        />
+                        <button className="relative text-[#FAA821] px-6 sm:px-8 py-2 mb-6 text-sm uppercase tracking-widest font-semibold bg-white rounded-full">
+                            <h3>Testimonials</h3>
+                        </button>
+                    </div>
 
-                    <h2 className="text-[#1b6934] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 drop-shadow-2xl">
+                    <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 drop-shadow-2xl">
                         What Our Guests Say
                     </h2>
 
@@ -83,28 +69,23 @@ const Testimonials = () => {
                         Don't just take our word for it - hear from our valued guests about their transformative experiences
                     </p>
 
-                    {/* Testimonials Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                         {testimonials.map((testimonial) => (
                             <div
                                 key={testimonial.id}
-                                className="bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                                className="bg-white rounded-2xl shadow-xl overflow-hidden"
                             >
                                 <div className="p-6 md:p-8">
-                                    {/* Rating Stars - Using a default rating of 5 since your API doesn't have rating field */}
                                     <div className="flex gap-1 mb-4">
                                         {renderStars(5)}
                                     </div>
 
-                                    {/* Testimonial Text - Using long_description or short_description */}
                                     <p className="text-gray-700 text-sm md:text-base leading-relaxed mb-6 italic">
                                         "{stripHtmlTags(testimonial.long_description) || testimonial.short_description || 'No description available'}"
                                     </p>
 
-                                    {/* Divider */}
                                     <div className="w-12 h-0.5 bg-[#FAA821] mb-4"></div>
 
-                                    {/* Guest Info */}
                                     <div className="flex items-center gap-4">
                                         <div className="w-12 h-12 rounded-full bg-[#FAA821] flex items-center justify-center text-white font-bold text-xl">
                                             {testimonial.fullname ? testimonial.fullname.charAt(0) : '?'}

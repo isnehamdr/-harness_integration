@@ -1,23 +1,25 @@
 // import React, { useEffect, useRef } from 'react'
 // import gsap from 'gsap'
 // import { ScrollTrigger } from 'gsap/ScrollTrigger'
+// import Seo from '../Component/Seo'
+// import { BUSINESS_NAME, CONTACT, buildLocalBusinessSchema } from '../seo/site'
 
 // gsap.registerPlugin(ScrollTrigger)
 
 // const contactCards = [
 //   {
 //     title: 'Visit Us',
-//     value: 'Kusma, Nepal, 33400',
+//     value: CONTACT.address,
 //     description: 'A scenic destination for stays, dining, and memorable events.',
 //   },
 //   {
 //     title: 'Call Us',
-//     value: '067-422112',
+//     value: CONTACT.phoneDisplay,
 //     description: 'Reach out for reservations, event planning, or quick inquiries.',
 //   },
 //   {
 //     title: 'Email Us',
-//     value: 'theharnessnepal@gmail.com',
+//     value: CONTACT.email,
 //     description: 'Share your travel dates, event ideas, or special requirements.',
 //   },
 // ]
@@ -118,6 +120,15 @@
 //   }, [])
 
 //   return (
+//     <>
+//       <Seo
+//         title="Contact Harness Zipline Resort in Kusma, Nepal"
+//         description="Contact Harness Zipline Pvt Ltd in Kusma, Nepal for room bookings, zipline adventures, dining reservations, weddings, conferences, and special events."
+//         path="/contact"
+//         image="/images/DSC01949.jpeg"
+//         keywords="contact Harness Nepal, Kusma resort contact, zipline booking Nepal, Harness phone number, Harness email"
+//         schema={[buildLocalBusinessSchema({ name: BUSINESS_NAME })]}
+//       />
 //     <div className="overflow-x-hidden bg-[#f8f5ef]">
 //       {/* HERO SECTION */}
 //       <div
@@ -149,7 +160,7 @@
 //               event, or next experience
 //             </h2>
 
-//             <p className="mt-5 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed text-white/85">
+//             <p className="mt-5 max-w-2xl mx-auto text-sm sm:text-base lg:text-xl leading-relaxed text-white/85">
 //               Whether you are booking a room, organizing a celebration,
 //               or just exploring what Harness offers, we are here to help
 //               you get started.
@@ -179,7 +190,7 @@
 //           >
 //             <img
 //               src="/images/mask.svg"
-//               alt=""
+//               alt="mask"
 //               className="w-full h-full object-cover object-top invert"
 //             />
 //           </div>
@@ -275,7 +286,7 @@
 //         <div className="absolute left-0 top-10 h-64 w-64 opacity-10 sm:h-80 sm:w-80">
 //           <img
 //             src="/images/bg5.png"
-//             alt=""
+//             alt="background"
 //             className="h-full w-full object-contain"
 //           />
 //         </div>
@@ -341,20 +352,20 @@
 
 //                 <textarea
 //                   rows="5"
-//                   placeholder="Tell us a little more about your plans"
+//                   placeholder="Tell us a little more about your plans"y
 //                   className="rounded-3xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm outline-none focus:border-[#FAA821] sm:col-span-2"
 //                 />
 
 //                 <div className="flex flex-col gap-3 sm:col-span-2 sm:flex-row">
 //                   <a
-//                     href="mailto:theharnessnepal@gmail.com"
+//                     href={`mailto:${CONTACT.email}`}
 //                     className="inline-flex items-center justify-center rounded-full bg-[#FAA821] px-6 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-white transition hover:bg-[#e8960f]"
 //                   >
 //                     Email Us Directly
 //                   </a>
 
 //                   <a
-//                     href="tel:067422112"
+//                     href={CONTACT.phoneHref}
 //                     className="inline-flex items-center justify-center rounded-full border border-stone-300 px-6 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-stone-800 transition hover:border-[#FAA821] hover:text-[#FAA821]"
 //                   >
 //                     Call Now
@@ -404,13 +415,14 @@
 //         </div>
 //       </section>
 //     </div>
+//     </>
 //   )
 // }
 
 // export default ContactPage
 
 
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Seo from '../Component/Seo'
@@ -442,6 +454,139 @@ const ContactPage = () => {
   const contentSectionRef = useRef(null)
   const maskRef = useRef(null)
   const contentRef = useRef(null)
+
+  // Form state
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    inquiryType: 'Room Booking',
+    date: '',
+    guests: '',
+    message: ''
+  })
+  
+  const [verificationCode, setVerificationCode] = useState('')
+  const [userVerificationCode, setUserVerificationCode] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' })
+  const [isFormValid, setIsFormValid] = useState(false)
+
+  // Generate random verification code
+  const generateVerificationCode = () => {
+    const code = Math.floor(100000 + Math.random() * 900000).toString()
+    setVerificationCode(code)
+    return code
+  }
+
+  // Generate new code on component mount
+  useEffect(() => {
+    generateVerificationCode()
+  }, [])
+
+  // Validate form
+  useEffect(() => {
+    const isValid = 
+      formData.name.trim() !== '' &&
+      formData.email.trim() !== '' &&
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email) &&
+      formData.phone.trim() !== '' &&
+      formData.message.trim() !== '' &&
+      userVerificationCode === verificationCode &&
+      userVerificationCode !== ''
+    
+    setIsFormValid(isValid)
+  }, [formData, userVerificationCode, verificationCode])
+
+  // Handle input changes
+  const handleInputChange = (e) => {
+    const { name, value } = e.target
+    setFormData(prev => ({ ...prev, [name]: value }))
+    // Clear submit status when user starts typing
+    if (submitStatus.message) setSubmitStatus({ type: '', message: '' })
+  }
+
+  // Handle verification code change
+  const handleVerificationChange = (e) => {
+    const value = e.target.value.replace(/\D/g, '').slice(0, 6)
+    setUserVerificationCode(value)
+  }
+
+  // Refresh verification code
+  const refreshVerificationCode = () => {
+    generateVerificationCode()
+    setUserVerificationCode('')
+  }
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    
+    if (!isFormValid) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Please fill all fields correctly and enter the valid verification code.'
+      })
+      return
+    }
+
+    setIsSubmitting(true)
+    setSubmitStatus({ type: '', message: '' })
+
+    try {
+      // Here you would typically send the data to your backend
+      // For now, we'll simulate an API call
+      await new Promise(resolve => setTimeout(resolve, 1500))
+      
+      // Prepare email content
+      const emailContent = `
+        New Inquiry from Harness Website
+        
+        Name: ${formData.name}
+        Email: ${formData.email}
+        Phone: ${formData.phone}
+        Inquiry Type: ${formData.inquiryType}
+        Date: ${formData.date || 'Not specified'}
+        Guests: ${formData.guests || 'Not specified'}
+        Message: ${formData.message}
+      `
+
+      // You can replace this with actual email sending logic
+      console.log('Form submitted:', emailContent)
+      
+      // Show success message
+      setSubmitStatus({
+        type: 'success',
+        message: 'Thank you! Your inquiry has been sent successfully. We\'ll get back to you soon.'
+      })
+      
+      // Reset form after successful submission
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        inquiryType: 'Room Booking',
+        date: '',
+        guests: '',
+        message: ''
+      })
+      setUserVerificationCode('')
+      generateVerificationCode()
+      
+      // Optional: Reset success message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus({ type: '', message: '' })
+      }, 5000)
+      
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Something went wrong. Please try again later.'
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -564,8 +709,6 @@ const ContactPage = () => {
             ref={textRef}
             className="text-center max-w-4xl"
           >
-           
-
             <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg">
               Let&apos;s plan your stay,
               <br className="hidden sm:block" />
@@ -720,29 +863,57 @@ const ContactPage = () => {
                 help guide you to the best option at Harness.
               </p>
 
+              {/* Status Message */}
+              {submitStatus.message && (
+                <div className={`mt-4 p-4 rounded-xl ${
+                  submitStatus.type === 'success' 
+                    ? 'bg-green-50 border border-green-200 text-green-800' 
+                    : 'bg-red-50 border border-red-200 text-red-800'
+                }`}>
+                  {submitStatus.message}
+                </div>
+              )}
+
               <form
                 className="mt-8 grid gap-4 sm:grid-cols-2"
-                onSubmit={(event) => event.preventDefault()}
+                onSubmit={handleSubmit}
               >
                 <input
                   type="text"
-                  placeholder="Your name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  placeholder="Your name *"
                   className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-3 text-sm outline-none focus:border-[#FAA821]"
+                  required
                 />
 
                 <input
                   type="email"
-                  placeholder="Email address"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  placeholder="Email address *"
                   className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-3 text-sm outline-none focus:border-[#FAA821]"
+                  required
                 />
 
                 <input
                   type="tel"
-                  placeholder="Phone number"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  placeholder="Phone number *"
                   className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-3 text-sm outline-none focus:border-[#FAA821]"
+                  required
                 />
 
-                <select className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-3 text-sm outline-none focus:border-[#FAA821]">
+                <select 
+                  name="inquiryType"
+                  value={formData.inquiryType}
+                  onChange={handleInputChange}
+                  className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-3 text-sm outline-none focus:border-[#FAA821]"
+                >
                   <option>Room Booking</option>
                   <option>Dining Reservation</option>
                   <option>Wedding or Celebration</option>
@@ -752,26 +923,99 @@ const ContactPage = () => {
 
                 <input
                   type="date"
+                  name="date"
+                  value={formData.date}
+                  onChange={handleInputChange}
                   className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-3 text-sm outline-none focus:border-[#FAA821]"
                 />
 
                 <input
                   type="number"
                   min="1"
+                  name="guests"
+                  value={formData.guests}
+                  onChange={handleInputChange}
                   placeholder="Guests"
                   className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-3 text-sm outline-none focus:border-[#FAA821]"
                 />
 
                 <textarea
                   rows="5"
-                  placeholder="Tell us a little more about your plans"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  placeholder="Tell us a little more about your plans *"
                   className="rounded-3xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm outline-none focus:border-[#FAA821] sm:col-span-2"
+                  required
                 />
 
+                {/* Verification Code Section */}
+                <div className="sm:col-span-2">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 p-4 bg-stone-50 rounded-2xl border border-stone-200">
+                    <div className="flex-1">
+                      <label className="block text-sm font-semibold text-stone-700 mb-2">
+                        Verification Code *
+                      </label>
+                      <div className="flex gap-2">
+                        <div className="flex-1">
+                          <input
+                            type="text"
+                            value={userVerificationCode}
+                            onChange={handleVerificationChange}
+                            placeholder="Enter 6-digit code"
+                            maxLength="6"
+                            className="w-full rounded-xl border border-stone-200 bg-white px-4 py-3 text-sm outline-none focus:border-[#FAA821] font-mono text-center text-lg tracking-wider"
+                            required
+                          />
+                        </div>
+                        <button
+                          type="button"
+                          onClick={refreshVerificationCode}
+                          className="px-4 py-2 bg-stone-200 hover:bg-stone-300 rounded-xl transition-colors text-stone-700 text-sm font-semibold"
+                        >
+                          ↻
+                        </button>
+                      </div>
+                    </div>
+                    
+                    <div className="flex-1">
+                      <div className="bg-white rounded-xl border border-stone-200 p-3 text-center">
+                        <p className="text-xs text-stone-500 mb-1">Enter this code:</p>
+                        <p className="font-mono text-2xl font-bold tracking-wider text-[#FAA821] select-none">
+                          {verificationCode}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {userVerificationCode && userVerificationCode !== verificationCode && (
+                    <p className="text-xs text-red-600 mt-2 ml-2">
+                      ✗ Verification code does not match
+                    </p>
+                  )}
+                  {userVerificationCode === verificationCode && userVerificationCode !== '' && (
+                    <p className="text-xs text-green-600 mt-2 ml-2">
+                      ✓ Verification code matched
+                    </p>
+                  )}
+                </div>
+
                 <div className="flex flex-col gap-3 sm:col-span-2 sm:flex-row">
+                  <button
+                    type="submit"
+                    disabled={!isFormValid || isSubmitting}
+                    className={`inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-white transition ${
+                      isFormValid && !isSubmitting
+                        ? 'bg-[#FAA821] hover:bg-[#e8960f] cursor-pointer'
+                        : 'bg-gray-300 cursor-not-allowed'
+                    }`}
+                  >
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                  </button>
+
                   <a
                     href={`mailto:${CONTACT.email}`}
-                    className="inline-flex items-center justify-center rounded-full bg-[#FAA821] px-6 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-white transition hover:bg-[#e8960f]"
+                    className="inline-flex items-center justify-center rounded-full border border-stone-300 px-6 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-stone-800 transition hover:border-[#FAA821] hover:text-[#FAA821]"
                   >
                     Email Us Directly
                   </a>

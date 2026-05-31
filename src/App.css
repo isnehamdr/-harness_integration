@@ -71,3 +71,25 @@ h3 {
 .animate-move-along-line {
   animation: moveAlongLine 6s linear infinite;
 }
+
+
+/* Add to your global CSS file */
+.long-description ul {
+  @apply list-disc pl-5 mt-2 space-y-1;
+}
+
+.long-description li {
+  @apply text-black/80 text-sm sm:text-base mb-1;
+}
+
+.long-description p {
+  @apply text-black/80 text-sm sm:text-xl mb-3 leading-relaxed;
+}
+
+.long-description strong {
+  @apply font-bold text-black;
+}
+
+.long-description br {
+  @apply hidden;
+}
