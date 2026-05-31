@@ -270,12 +270,14 @@ const Blog = () => {
 
     const [blogs, setBlogs] = useState([])
     const [loading, setLoading] = useState(true)
+    const imgurl = import.meta.env.VITE_IMAGE_PATH;
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
     // ── Fetch & filter blogs ─────────────────────────────────────────
     useEffect(() => {
         const fetchBlogs = async () => {
             try {
-                const response = await axios.get('http://127.0.0.1:8000/api/blogs')
+                const response = await axios.get(`${API_BASE_URL}/blogs`)
                 const data = response.data.data
 
                 // Keep only archived (published) entries
@@ -463,7 +465,7 @@ const Blog = () => {
                                                     style={{ height: 'clamp(280px,40vw,450px)' }}
                                                 >
                                                     <img
-                                                        src={`${BASE_URL}${post.image}`}
+                                                        src={`${imgurl}/${post.image}`}
                                                         alt={post.name}
                                                         className="absolute inset-0 w-full h-full object-cover"
                                                         style={{

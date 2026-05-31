@@ -8,7 +8,9 @@ import { Link } from 'react-router-dom'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const BASE_URL = 'http://127.0.0.1:8000/storage/'
+
+const imgurl = import.meta.env.VITE_IMAGE_PATH;
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const Hero = () => {
 	const heroRef = useRef(null)
@@ -24,7 +26,7 @@ const Hero = () => {
 	useEffect(() => {
 		const fetchHero = async () => {
 			try {
-				const response = await axios.get('http://127.0.0.1:8000/api/hero')
+				const response = await axios.get(`${API_BASE_URL}/hero`)
 				const data = response.data.data
 
 				// Support both array and single object responses
@@ -42,6 +44,9 @@ const Hero = () => {
 		}
 		fetchHero()
 	}, [])
+
+
+	console.log(hero);
 
 	
 
@@ -130,9 +135,6 @@ const Hero = () => {
 	// ── Not archived / not found — render nothing ────────────────────
 	if (!hero) return null
 
-	// ── Resolve media URLs ───────────────────────────────────────────
-	const videoSrc = hero.video ? `${BASE_URL}${hero.video}` : '/images/main.mp4'
-	const imageSrc = hero.image ? `${BASE_URL}${hero.image}` : '/images/hero-fallback.jpg'
 
 	return (
 		<>
@@ -150,9 +152,9 @@ const Hero = () => {
 					playsInline
 					className="absolute top-0 left-0 w-full h-full object-cover"
 				>
-					<source src={videoSrc} type="video/mp4" />
+					<source src={`${imgurl}/${hero.video}`} type="video/mp4" />
 					<img
-						src={imageSrc}
+						src={`${imgurl}/${hero.image}`}
 						alt="Adventure Resort"
 						className="w-full h-full object-cover"
 					/>

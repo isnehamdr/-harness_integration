@@ -26,6 +26,9 @@ const GalleryPage = () => {
     const [isLoading, setIsLoading] = useState(true)
     const [gallery, setGallery] = useState([])
 
+    const imgurl = import.meta.env.VITE_IMAGE_PATH;
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
     // Fetch Gallery
     useEffect(() => {
         const fetchgallery = async () => {
@@ -33,7 +36,7 @@ const GalleryPage = () => {
                 setIsLoading(true)
 
                 const response = await axios.get(
-                    'http://127.0.0.1:8000/api/galleries'
+                    `${API_BASE_URL}/galleries`
                 )
 
                 // Only archived galleries
@@ -238,7 +241,7 @@ const GalleryPage = () => {
                             }}
                         >
                             <img
-                                src={`http://127.0.0.1:8000/storage/${service.images?.[0]?.path}`}
+                                src={`${imgurl}/${service.images?.[0]?.path}`}
                                 alt={service.name}
                                 loading="lazy"
                                 className={`

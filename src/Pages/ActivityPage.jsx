@@ -22,6 +22,9 @@ const ActivityPage = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [activity, setActivity] = useState([]);
 
+    const imgurl = import.meta.env.VITE_IMAGE_PATH;
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
     // Navigate
     const handleCardClick = (slug) => {
         navigate(`/activities/${slug}`);
@@ -32,7 +35,7 @@ const ActivityPage = () => {
         const fetchActivity = async () => {
             try {
                 const response = await axios.get(
-                    "http://127.0.0.1:8000/api/activities"
+                    `${API_BASE_URL}/activities`
                 );
 
                 // Show only archived activities
@@ -239,7 +242,7 @@ const ActivityPage = () => {
                 style={{
                     height:
                         "clamp(300px, 35vw, 450px)",
-                    backgroundImage: `url(http://127.0.0.1:8000/storage/${service.image})`,
+                    backgroundImage: `url(${imgurl}/${service.image})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     maskImage:

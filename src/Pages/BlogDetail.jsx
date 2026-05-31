@@ -142,11 +142,13 @@ const BlogDetail = () => {
     const [post, setPost] = useState(null)
     const [loading, setLoading] = useState(true)
     const [notFound, setNotFound] = useState(false)
+    const imgurl = import.meta.env.VITE_IMAGE_PATH;
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
     useEffect(() => {
         const fetchPost = async () => {
             try {
-                const response = await axios.get(`http://127.0.0.1:8000/api/blogs/${slug}`)
+                const response = await axios.get(`${API_BASE_URL}/blogs/${slug}`)
                 const data = response.data.data
 
                 // If not archived, treat as not found
@@ -188,7 +190,7 @@ const BlogDetail = () => {
             {/* HERO */}
             <div className="relative w-full h-[50vh] sm:h-[60vh] lg:h-[70vh] overflow-hidden">
                 <img
-                    src={`${BASE_URL}${post.image}`}
+                    src={`${imgurl}/${post.image}`}
                     alt={post.title}
                     className="absolute inset-0 w-full h-full object-cover"
                 />

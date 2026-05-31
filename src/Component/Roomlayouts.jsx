@@ -452,6 +452,8 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const BASE_URL = 'http://127.0.0.1:8000'
+const imgurl = import.meta.env.VITE_IMAGE_PATH;
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const Roomlayouts = ({ rooms: propRooms }) => {
   const navigate = useNavigate()
@@ -466,12 +468,12 @@ const Roomlayouts = ({ rooms: propRooms }) => {
       const transformedRooms = archivedRooms.map(room => {
         // Resolve first_image URL
         const firstImageUrl = room.first_image
-          ? (room.first_image.startsWith('http') ? room.first_image : `${BASE_URL}${room.first_image}`)
+          ? (room.first_image.startsWith('http') ? room.first_image : `${imgurl}/${room.first_image}`)
           : null
 
         // Resolve all images
         const images = room.images?.map(img => ({
-          url: img.image.startsWith('http') ? img.image : `${BASE_URL}${img.image}`,
+          url: img.image.startsWith('http') ? img.image : `${imgurl}/${img.image}`,
           alt: room.name,
         })) || (firstImageUrl ? [{ url: firstImageUrl, alt: room.name }] : [])
 

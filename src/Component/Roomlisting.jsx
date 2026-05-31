@@ -406,7 +406,9 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
-const BASE_URL = 'http://127.0.0.1:8000'
+
+const imgurl = import.meta.env.VITE_IMAGE_PATH;
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 // Shared mask style
 const maskStyle = {
@@ -526,7 +528,7 @@ const Roomlisting = () => {
   useEffect(() => {
     const fetchRooms = async () => {
       try {
-        const response = await axios.get(`${BASE_URL}/api/ourrooms`)
+        const response = await axios.get(`${API_BASE_URL}/ourrooms`)
         const data = response.data.data
 
         // Show only archived rooms
@@ -541,7 +543,7 @@ const Roomlisting = () => {
 
           // Prepend BASE_URL so relative paths like /rooms/xyz.jpg become full URLs
           images: room.images?.map(img => ({
-            url: img.image.startsWith('http') ? img.image : `${BASE_URL}${img.image}`,
+            url: img.image.startsWith('http') ? img.image : `${imgurl}/${img.image}`,
             alt: room.name,
           })) || [],
 
@@ -563,6 +565,8 @@ const Roomlisting = () => {
 
     fetchRooms()
   }, [])
+
+  console.log('Rooms:', rooms)
 
   if (loading) {
     return (

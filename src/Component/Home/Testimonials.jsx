@@ -3,11 +3,12 @@ import React, { useEffect, useState } from 'react'
 
 const Testimonials = () => {
     const [testimonials, setTestimonials] = useState([]);
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
     useEffect(() => {
       const fetchTestimonials = async () => {
         try {
-          const response = await axios.get("http://127.0.0.1:8000/api/testimonials");
+          const response = await axios.get(`${API_BASE_URL}/testimonials`);
           const data = response.data.data;
           setTestimonials(data);
         } catch (error) {

@@ -11,6 +11,9 @@ if (typeof window !== 'undefined') {
 
 const API_BASE = 'http://127.0.0.1:8000/api';
 
+const imgurl = import.meta.env.VITE_IMAGE_PATH;
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 const ServiceDetail = () => {
   const { slug }    = useParams();
   const navigate    = useNavigate();
@@ -37,12 +40,12 @@ const ServiceDetail = () => {
     const fetchService = async () => {
       try {
         // Fetch this service's detail
-        const res = await axios.get(`${API_BASE}/ourservice/${slug}`);
+        const res = await axios.get(`${API_BASE_URL}/ourservice/${slug}`);
         const data = res.data.data;
         setService(data);
 
         // Fetch all services to build related list (only non-archived shown as related)
-        const allRes = await axios.get(`${API_BASE}/ourservice`);
+        const allRes = await axios.get(`${API_BASE_URL}/ourservice`);
         const others = allRes.data.data
           .filter((s) => s.slug !== slug && (s.is_archived === true || s.is_archived === 1))
           .slice(0, 3);
@@ -248,7 +251,7 @@ const ServiceDetail = () => {
         <div className="relative w-full aspect-[4/3] overflow-hidden">
           <div
             className="absolute inset-0 w-full h-full transition duration-500 group-hover:scale-105"
-            style={{ backgroundImage: `url('http://127.0.0.1:8000/storage/${img}')`, backgroundSize: 'cover', backgroundPosition: 'center', ...maskStyle }}
+            style={{ backgroundImage: `url('${imgurl}/${img}')`, backgroundSize: 'cover', backgroundPosition: 'center', ...maskStyle }}
           />
           <div
             className="absolute inset-0 w-full h-full pointer-events-none"
@@ -283,7 +286,7 @@ const ServiceDetail = () => {
       {/* HERO */}
       <div ref={heroRef} className="relative bg-white w-full h-screen overflow-hidden" style={{ zIndex: 1 }}>
         <img
-          src={`http://127.0.0.1:8000/storage/${heroImage}`}
+          src={`${imgurl}/${heroImage}`}
           alt={service.name}
           className="absolute inset-0 w-full h-full object-cover"
           style={{ willChange: 'transform' }}
@@ -361,7 +364,7 @@ const ServiceDetail = () => {
                 <div
                   className="bg-cover bg-center relative w-full"
                   style={{
-                    backgroundImage: `url(http://127.0.0.1:8000/storage/${heroImage})`,
+                    backgroundImage: `url(${imgurl}/${heroImage})`,
                     maskImage: "url('/images/mask.png')",
                     WebkitMaskImage: "url('/images/mask.png')",
                     maskSize: 'contain',

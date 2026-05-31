@@ -281,11 +281,13 @@ const RoomPage = () => {
     const maskRef        = useRef(null)
     const contentRef     = useRef(null)
     const [rooms, setRooms] = useState([])
+    
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
     useEffect(() => {
         const fetchRoom = async () => {
             try {
-                const response = await axios.get('http://127.0.0.1:8000/api/ourrooms');
+                const response = await axios.get(`${API_BASE_URL}/ourrooms`);
                 const data = response.data.data;
                 // Filter only archived rooms
                 const archivedRooms = data.filter(room => room.is_archived === true);

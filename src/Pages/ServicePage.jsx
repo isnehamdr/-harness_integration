@@ -21,12 +21,15 @@ const ServicePage = () => {
 
   const BASE_URL = 'http://127.0.0.1:8000/storage/'
 
+  const imgurl = import.meta.env.VITE_IMAGE_PATH;
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 
   useEffect(() => {
     const fetchService = async () => {
       try {
         setLoading(true)
-        const response = await axios.get('http://127.0.0.1:8000/api/ourservice')
+        const response = await axios.get(`${API_BASE_URL}/ourservice`)
         console.log('Service Response:', response.data)
 
         // is_archived comes as boolean true from the API
@@ -265,7 +268,7 @@ const ServicePage = () => {
                           className="relative w-full overflow-hidden transition-all duration-500 group-hover:scale-[1.02] cursor-pointer"
                           style={{
                             height: 'clamp(220px, 38vw, 450px)',
-                            backgroundImage: item.first_image ? `url(http://127.0.0.1:8000/storage/${item.first_image})` : 'none',
+                            backgroundImage: item.first_image ? `url(${imgurl}/${item.first_image})` : 'none',
                             backgroundColor: item.first_image ? 'transparent' : '#e5e7eb',
                             backgroundSize: 'cover',
                             backgroundPosition: 'center',

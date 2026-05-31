@@ -1113,7 +1113,8 @@ import careerData from '../data/careerdata.json'
 import axios from 'axios'
 import { FileText, X, AlertCircle } from 'lucide-react'
 
-const API_BASE_URL = 'http://127.0.0.1:8000/api'
+const imgurl = import.meta.env.VITE_IMAGE_PATH;
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger)
@@ -1794,6 +1795,8 @@ const CareerPage = () => {
   const [jobs, setJobs] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const imgurl = import.meta.env.VITE_IMAGE_PATH;
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   const { meta, perks } = careerData
 
@@ -1850,7 +1853,7 @@ const CareerPage = () => {
   const fetchJobs = async (retryAttempt = 0) => {
     try {
       setLoading(true)
-      const response = await axios.get("http://127.0.0.1:8000/api/jobs", {
+      const response = await axios.get(`${API_BASE_URL}/jobs`, {
         timeout: 10000,
         headers: {
           'Cache-Control': 'no-cache',
